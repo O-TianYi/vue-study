@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>实践1</title>
+</head>
+<!-- 业务逻辑：
+1、首先先建立好表面
+2、如何获取填入的信息，并组合为一个新的内容
+3、如何实现删除一行内容
+4、如何搜索 -->
+
+<body>
+    <div id="app">
+        <p>新增的id:<input type="text" v-model="id" >新增的内容:<input type="text" v-model="name"><button @click="add">添加</button></p>
+        <p><input type="text" name="" v-model="keyword"></p>
+        <table border="2px">
+            <tbody>
+                <tr>
+                    <td>id</td>
+                    <td>name</td>
+                    <td></td>
+                </tr>
+                <tr v-for="a in search(keyword)">
+                    <td>{{a.id}}</td>
+                    <td>{{a.name}}</td>
+                    <td><a href="#" @click.prevent="move(a.id)">删除</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script src="vue.js"></script>
+<script>
+var vm=new Vue({
+    el:'#app',
+    data:{keyword:null,id:null,name:null,list:[{id:1,name:'zs'},{id:2,name:'ls'}]},
+    methods:{
+        add(){
+            var listnew={id:this.id,name:this.name};
+            this.list.push(listnew)
+        },
+        move(id){
+                var index=this.list.findIndex((ele)=>(ele.id==id));
+                this.list.splice(index,1)//删除一个否则会把全删除
+        }
+    }
+
+})
+</script>
+</html>
+
+
+<!-- 问题：搜索功能还没有实现，卡住的原因：如何通过关键字来遍历数组 -->

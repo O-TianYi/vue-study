@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>跑马灯</title>
+</head>
+<body>
+<div id="app">
+     <p>{{msg}}</p>
+    <button @click='lang'>狼起来</button>
+    <button @click='ting'>别浪</button>
+</div>
+
+</body>
+<script src="vue.js"></script>
+<script>
+var vm=new Vue({
+    el:'#app',
+    data:{msg:'猥琐发育别浪，我要一打九',
+    intervalid:null},
+    methods:{
+        lang:function(){
+              if(this.intervalid!=null)return ;//如果intervalid不为null就是为现在已经处于运动的状态，就会直接退出该函数，仅仅希望退出函数时，就可以使用 return;
+                var _this=this;
+                this.intervalid=setInterval(function(){//定时器的this是指向window的
+                var start=_this.msg.substring(0,1);//街区当前实例的msg字符串的从0开始的一位字符串
+                var end=_this.msg.substring(1);//街区当前实例的msg字符串的从1开始到最后的字符串
+                _this.msg=end+start
+            },500)
+
+        },
+        ting: function(){
+            clearInterval(this.intervalid);
+            this.intervalid=null
+        }
+        }
+})
+</script>
+</html>

@@ -1,0 +1,69 @@
+
+<!-- 父组件向子组件传递值 -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>父子组件传递值</title>
+</head>
+<body>
+    <div id="app">
+       <mycoml :parentmsg="msg"></mycoml>
+    </div>
+</body>
+<script src="vue.js"></script>
+<script>
+var vm=new Vue({
+    el:'#app',
+    data:{msg:'这是需要传递给子组件的值'},
+    methods:{},
+    //住哟：props必须放在组件的括号里面，参数引用必须放在标签里面
+    components:{
+        mycoml: {template:'<h3>这是第一个组件---{{parentmsg}}</h3>',
+         props:['parentmsg']
+     }
+    }
+})
+</script>
+</html> -->
+
+
+<!-- 父组件向子组件传递方法-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>父向子组件传方法</title>
+</head>
+<body>
+    <div id="app">
+       <mycoml @func="show"></mycoml>
+    </div>
+</body>
+<script src="vue.js"></script>
+<script>
+var vm=new Vue({
+    el:'#app',
+    data:{},
+    methods:{show(){
+        alert("这是父组件的一个show方法")
+    }},
+    //住哟：props必须放在组件的括号里面，参数引用必须放在标签里面
+    components:{
+        mycoml: {template:'<h3 @click="myclick">这是第一个组件</h3>',
+        data:function(){
+            return{}
+        },
+        methods:{
+            myclick(){
+                this.$emit('func')//必须加$emit来触发吗
+
+            }
+        }
+     }
+    }
+})
+</script>
+</html>
+
+

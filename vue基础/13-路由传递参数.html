@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>组件的切换</title>
+</head>
+<body>
+    <div id="app">
+        <router-link to="/login?id=10&name=zs">登陆</router-link>
+        <router-view></router-view>
+    </div>
+    <script src="vue.js"></script>
+    <script src="vue-router.js"></script>
+    <script type="text/javascript">
+        var login={template:'<h3>这是登陆组件--{{$route.query.id}}--{{$route.query.name}}</h3>'}
+        //创建一个路由对象
+        var router=new VueRouter({
+            routes:[{path:'/login',component: login}]
+        })
+        var vm=new Vue({
+            el:'#app',
+            data:{},
+            methods:{},
+            components:{},
+            router: router
+
+        })
+    </script>
+</body>
+</html>

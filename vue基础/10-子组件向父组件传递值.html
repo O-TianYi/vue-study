@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>子向父传递值</title>
+</head>
+<body>
+       <div id="app">
+       {{childmsg}}
+       <mycoml @func="show"></mycoml>
+    </div>
+</body>
+<script src="vue.js"></script>
+<script>
+var vm=new Vue({
+    el:'#app',
+    data:{childmsg:null},
+    methods:{show(){
+        alert("这是父组件的一个show方法")
+    }},
+    //住哟：props必须放在组件的括号里面，参数引用必须放在标签里面
+    components:{
+        mycoml: {template:'<h3 @click="myclick">这是第一个组件{{msg}}</h3>'},
+        data:function(){
+            return{msg:'这是子组件的一个值或对象'}
+        },
+        methods:{
+            myclick(){
+                this.$emit('func')//必须加$emit来触发吗
+
+            }
+        }
+    }
+})
+</script>
+</html>
+
+
+<!-- 问题：没有实现子组件传递值给父组件 -->

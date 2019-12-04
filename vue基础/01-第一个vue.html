@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>vue测试</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+        <input type="button"  @click="show" value="点击该按钮">
+    </div>
+</body>
+<script src="vue.js"></script>
+<script>
+var vm=new Vue({
+    el:'#app',
+    data:{msg:'欢迎'},
+    methods:{
+        show: function(){
+            alert('heelo');
+        }
+    }
+})
+</script>
+</html>

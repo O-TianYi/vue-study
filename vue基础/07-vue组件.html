@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>vue组件</title>
+</head>
+<body>
+    <div id="app">
+       <!--  <mycoml></mycoml> -->
+        <login></login>
+        <login1></login1>
+    </div>
+    <!-- 第三种创建组件的方式：外部的template -->
+    <template id="tmp1">
+        <h3>这是第一个组件</h3>
+    </template>
+</body>
+<script src="vue.js"></script>
+<script>
+//第一种组件的创建方式，全局组件
+// var com=Vue.extend({
+//     template:'<h3>这是第一个组件</h3>'
+// })
+// Vue.component('mycoml',com);
+// 、
+//第二种方式，组合在一起
+// Vue.component('mycoml',{
+//      template:'<h3>这是第一个组件</h3>'
+// })
+//
+//
+// 第三种创建组件的方式：外部template来创建组件(最常用的)
+// Vue.component('mycoml',{
+//      template:'#tmp1'
+// })
+//
+//
+// 第四种方式:私有组件
+var vm=new Vue({
+    el:'#app',
+    data:{},
+    methods:{},
+    components:{
+        login: {template:'<h3>这是第一个组件</h3>'},
+        login1: {template:'#tmp1'}
+    }
+
+})
+</script>
+</html>

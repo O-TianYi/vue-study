@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>循环数字</title>
+</head>
+<body>
+    <div id="app">
+        <p v-for="a in list">{{a}}</p>
+        <p v-for="b in list1">{{b.name}}</p>
+        <p v-for="(val,key,i) in list2">{{key}}{{val}}{{i}}</p>
+    </div>
+</body>
+<script src="vue.js"></script>
+<script>
+var vm=new Vue({
+    el:'#app',
+    data:{list:[1,2,3,4,5,6,7],
+          list1:[{id:1,name:'zs'},{id:2,name:"ls"}],//为冒号不是等号
+          list2:{id:1,name:'zs',age:"12"}//为一个对象不是一个数组，一个对象的属性便利
+      }
+
+})
+</script>
+</html>
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>组件的切换</title>
+</head>
+<body>
+    <div id="app">
+        <router-link to="/login">登陆</router-link>
+        <router-view></router-view>
+    </div>
+    <tempalte id="tmp1">
+    <div>
+        <router-link to="/login/child">子组件</router-link>
+         <router-view></router-view>
+    </div>
+    </tempalte>
+    <script src="vue.js"></script>
+    <script src="vue-router.js"></script>
+    <script type="text/javascript">
+        var login={template:'#tmp1'}
+        var child={template:'<h1>这是登陆的子组件</h1>'}
+        var router=new VueRouter({
+            routes:[{path:'/login',component:login,
+                children:[
+                {path:'child',component:child}
+                ]
+            }]
+        })
+        var vm=new Vue({
+            el:'#app',
+            data:{},
+            methods:{},
+            components:{},
+            router
+
+        })
+    </script>
+</body>
+</html>

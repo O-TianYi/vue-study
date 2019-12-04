@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>组件的切换</title>
+</head>
+<body>
+    <div id="app">
+        <router-link to="/login">登陆</router-link>
+        <router-link to="/register">注册</router-link>
+        <router-view></router-view>
+    </div>
+    <script src="vue.js"></script>
+    <script src="vue-router.js"></script>
+    <script type="text/javascript">
+       var login={template:"<h3>这是登陆组件</h3>"}
+       var register= {template:"<h3>这是注册组件</h3>"}
+       //创建一个路由对象
+       var router=new VueRouter({
+            routes:[{
+                path:'/login',component:login
+            },
+            {
+                path:'/register',component:register
+            },{
+                path:'/',redirect:'/login'
+            }]//重定向默认第一个为登陆组件，不加的话是空白显示
+
+       })
+       var rou
+        var vm=new Vue({
+            el:'#app',
+            data:{},
+            methods:{},
+            router:router
+        })
+    </script>
+</body>
+</html>
+
+
+<!-- 需要找到router的包 -->
