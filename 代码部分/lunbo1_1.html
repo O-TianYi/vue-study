@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>无特效切换</title>
+    <link rel=stylesheet href="css/lunbo.css">
+    <link rel=stylesheet href="css/fanhui.css">
+    <style type="text/css">
+        .container{
+          position: absolute;
+          z-index: -1;
+          top: -100px;
+          width: 100%;
+          height: 100%;
+          background-color: #fff;
+          margin: 100px auto;
+        }
+        .center li:nth-child(1){
+             background: url("images/书的百科/书的诗句/诗句2.jpg");
+            background-size: cover;/* 让图片铺满整个div */
+        }
+        .center li:nth-child(2){
+            background: url("images/书的百科/书的诗句/诗句3.jpg")no-repeat;
+            background-position: center center;
+             background-size: cover;
+        }
+        .center li:nth-child(3){
+            background: url("images/书的百科/书的诗句/诗句4.jpg")no-repeat;
+            background-position: center center;
+             background-size: cover;
+        }
+        .center li:nth-child(4){
+            background: url("images/书的百科/书的诗句/诗句5.jpg")no-repeat;
+            background-position: center center;
+             background-size: cover;
+        }
+        .center li:nth-child(5){
+            background: url("images/书的百科/书的诗句/诗句6.jpg")no-repeat;
+            background-position: center center;
+             background-size: cover;
+        }
+        .center li:nth-child(6){
+            background: url("images/书的百科/书的诗句/诗句7.jpg")no-repeat;
+            background-position: center center;
+             background-size: cover;
+        }
+        .center li:nth-child(7){
+            background: url("images/书的百科/书的诗句/诗句8.jpg")no-repeat;
+            background-position: center center;
+             background-size: cover;
+        }
+        .center li:nth-child(8){
+            background: url("images/书的百科/书的诗句/诗句9.jpg")no-repeat;
+            background-position: center center;
+             background-size: cover;
+        }
+        .center li:nth-child(9){
+            background: url("images/书的百科/书的诗句/诗句10.jpg")no-repeat;
+            background-position: center center;
+             background-size: cover;
+        }
+        body{
+            background: url(images/雾效果背景图8.jpg);
+        }
+        .fog1,
+        .fog2{
+            position: absolute;
+            width: 100%;
+            height:100%;
+        }
+        .fog1{
+            z-index: -1;
+            background: url(images/fog-1.png);
+            -webkit-background-size: cover;
+            background-size: cover;
+            animation: moving 10s infinite;
+        }
+        .fog2{
+            background: url(images/fog-2.png);
+            animation: moving 10s linear infinite;
+        }
+        @keyframes moving{
+            0%{background-position: 0 0;}
+           100%{background-position: 100% 0;}
+        }
+    </style>
+</head>
+<body>
+    <div class="fog1"></div>
+    <div class="fog2"></div>
+    <div class="fanhui" ><a href="dierlei.html"><img src="images/返回按钮1.png" alt=""></a></div>
+    <div class="center">
+        <ul>
+            <li>图1 <span>甲骨文，是中国的一种古老文字，又称“契文”、“甲骨卜辞”、殷墟文字或“龟甲兽骨文”。是汉字的早期形式，是现存中国王朝时期最古老的一种成熟文字，最早出土于河南省安阳市殷墟。属于上古汉语(old chinese)，而非上古或者原始的其他语系的语言。</span></li>
+            <li>图2<span>甲骨文发现于中国河南省安阳市殷墟，是商朝(约公元前17世纪-公元前11世纪)的文化产物,距今约3600多年的历史。</span>  </li>
+            <li>图3<span>甲骨文，具有对称、稳定的格局。备书法的三个要素，即用笔、结字、章法。  </span></li>
+            <li>图4<span>从字体的数量和结构方式来看，甲骨文已经是发展到了有较严密系统的文字了。汉字的“六书”原则，在甲骨文中都有所体现。但是原始图画文字的痕迹还是比较明显。 </span> </li>
+            <li>图5<span>甲骨文是商朝(约公元前17世纪-公元前11世纪)的文化产物,距今约3600多年的历史。  </span></li>
+            <li>图6<span>2017年11月24日，甲骨文顺利通过联合国教科文组织世界记忆工程国际咨询委员会的评审，成功入选《世界记忆名录》</span>  </li>
+            <li>图7<span>甲骨文因镌刻、书写于龟甲与兽骨上而得名，为殷商流传之书迹；内容为记载盘庚迁殷至纣王间二百七十年之卜辞，为最早之书迹</span>  </li>
+            <li>图8<span>自盘庚至武丁，约一百年，受到武丁之盛世影响，书法风格宏放雄伟，为甲骨书法之极致，大体而言，起笔多圆，收笔多尖，且曲直相错，富有变化，不论肥瘦，皆极雄劲。</span>  </li>
+            <li>图9<span>自祖庚至祖甲，约四十年。两人皆可算是守成的贤君，这一时期的书法谨饬，大抵承袭前期之风，恪守成规，新创极少，但已不如前期雄劲豪放之气。</span>  </li>
+        </ul>
+    </div>
+    <div class="big_1">
+    请点击左边的图片来获取背景
+    </div>
+    <div class="big_2">
+    请点击左边的图片来获取背景
+
+    </div>
+
+
+
+<script src="js/jquery.js"></script>
+<script type="text/javascript">
+    isClick1 = false;
+    isClick2 = false;
+    isClick3 = false;
+    isClick4 = false;
+    isClick5 = false;
+    isClick6 = false;
+</script>
+<script src="js/lunbo.js"></script>
+
+</body>
+</html>

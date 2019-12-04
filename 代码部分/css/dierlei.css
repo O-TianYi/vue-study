@@ -1,0 +1,145 @@
+        /* 初始化阶段 */
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        /* 去掉ul的点 */
+        ul{
+            list-style: none;
+        }
+        /* 去掉链接的下划线 */
+        a{
+            text-decoration: none;
+        }
+        body{
+            margin: 0px auto;
+        }
+
+        .content{
+            position: relative;
+            overflow: hidden;
+        }
+        /* 两个棒的样式 */
+        div{
+            position: absolute;
+            height: 300px;
+            margin-left: 500px;
+        }
+        .div1,
+        .div2{
+            z-index: 3;
+            width: 40px;
+            background: url(../images/卷轴棒.png)no-repeat;
+            background-size: cover;
+        }
+        /* //使他们不要重合在一起 */
+        .div2{
+            left: 40px;
+        }
+       /*  展开时候的内部画卷部分,因为两边宽展,所以设置两个div来,一个向左展示,一个向右展示 */
+        .div3,
+        .div4{
+            top: 10px;
+            height: 280px;
+            width: 20px;
+        }
+        .div3{
+            background: url(../images/卷轴心左.png)no-repeat;
+            background-size: cover;
+            left: 20px;
+        }
+        .div4{
+            background: url(../images/卷轴心右.png)no-repeat;
+            background-size: cover;
+            left: 10px;
+        }
+        /* //主页面的样式，即装链接淡出来的盒子 */
+        .main{
+            z-index: 5;
+            position: absolute;
+           left: -760px;
+            top: 10px;
+            display: none;
+            width: 1000px;
+            height: 280px;
+            /* background: url(../images/书的背景.jpg) */
+        }
+        .main .lunbo1,
+        .main .lunbo2{
+            position: absolute;
+            top: 15px;
+            width: 200px;
+            height: 250px;
+        }
+        .main .lunbo1{
+            left: -180px;
+        }
+        .main .lunbo2{
+            right: -250px;
+        }
+        .main img{
+            width: 200px;
+            height: 250px;
+        }
+        .main textarea{
+            position: absolute;
+            left: 532px;
+            top: 15px;
+            width: 50%;
+            height: 90%;
+            text-indent: 40px;/* 因为一个字的大小为20ox，所以缩进40px就会缩进2个字 */
+            resize:none;/* 禁止拖动该多行文本区域 */
+            font-size: 20px;
+           font-family: '楷体';
+           overflow:scroll;/* 显示滚动条 */
+           overflow-x:hidden;/* 关闭左右滑动的滚动条 */
+            background: url(../images/书的百科/内容图3.jpg);
+        }
+
+
+        /* header部分 */
+        /* 导航栏，即上面的四大名著 */
+        header{
+            position: fixed;
+            top: 0px;
+            left: 1200px;
+            width: 500px;
+            height: 100px;
+        }
+        header ul{
+            margin-right: 100px;
+             margin-top: 30px;
+        }
+        header ul li{
+            width: 40px;
+            height: 120px;
+            background: url(../images/墨迹li.png)no-repeat;
+            color: white;
+            float: right;
+            border-radius: 10px;
+            margin-right: 20px;
+            cursor: pointer;/* 鼠标变成小手 */
+            font-size: 20px;
+           font-family: '楷体';
+           font-weight: bolder;
+           text-align: center;
+           padding-top: 20px;
+        }
+        header li:hover{
+            font-size: 25px;
+            color: red;
+        }
+        header ul a{
+            display: block;
+            line-height: 40px;
+            cursor: pointer;/* 鼠标变成小手 */
+            font-size: 30px;
+           font-family: '楷体';
+           color: white;
+        }
+        header a:hover{
+            font-weight: bolder;
+            font-size: 35px;
+        }
+
+

@@ -1,0 +1,19 @@
+.fanhui{
+    position: absolute;
+    top: 120px;
+    right: 300px;
+    width: 64px;
+    height: 60px;
+    text-align: center;
+    display: fixed;
+    /* background-color: black; */
+    cursor: pointer;
+}
+.fanhui a{
+    color: white;
+    font-size: 30px;
+}
+.fahui a:hover{
+    font-weight: bolder;
+    font-size: 35px;
+}

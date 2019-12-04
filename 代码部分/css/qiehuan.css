@@ -1,0 +1,218 @@
+/* 初始化阶段 */
+*{
+    padding: 0;
+    margin: 0;
+}
+/* 去掉ul的点 */
+ul{
+    list-style: none;
+}
+/* 去掉链接的下划线 */
+a{
+    text-decoration: none;
+}
+/* 为可视的范围 */
+.center{
+    position: relative;
+    top: 200px;
+    left: 400px;
+    width: 800px;
+    height: 120px;
+    background-color: pink;
+    overflow: hidden;
+}
+/* ul的宽度要适当的大，不然li会掉下去和会显示center的背景颜色，影响美观 */
+.center ul{
+    width: 300%;
+    animation: moving 20s linear infinite;/* 动画匀速运动无限运动 */
+}
+ /*  每个li装一个图片 */
+.center li{
+    width: 240px;
+    height: 100px;
+    border: 1px solid white;
+    color: white;
+    float: left;
+    box-sizing: border-box;
+}
+/* 为什么每一个的size和position不加在共同样式上的原因是因为要先设置背景才能设置这两个属性，不然就会覆盖这两个属性，从而不起作用。 */
+.center li:nth-child(1){
+    background: url("../images/彦7.jpg")no-repeat;
+    background-position: center center;
+    background-size: cover;/* 让图片铺满整个div */
+}
+.center li:nth-child(2){
+    background: url("../images/雷娜1.jpg")no-repeat;
+    background-position: center center;
+     background-size: cover;
+}
+.center li:nth-child(3){
+    background: url("../images/雷娜3.jpg")no-repeat;
+    background-position: center center;
+     background-size: cover;
+}
+.center li:nth-child(4){
+    background: url("../images/彦1.jpg")no-repeat;
+    background-position: center center;
+     background-size: cover;
+}
+.center li:nth-child(5){
+    background: url("../images/彦2.jpg")no-repeat;
+    background-position: center center;
+     background-size: cover;
+}
+.center li:nth-child(6){
+    background: url("../images/彦3.jpg")no-repeat;
+    background-position: center center;
+     background-size: cover;
+}
+.center li:nth-child(7){
+    background: url("../images/彦4.jpg")no-repeat;
+    background-position: center center;
+     background-size: cover;
+}
+.center li:nth-child(8){
+    background: url("../images/彦5.jpg")no-repeat;
+    background-position: center center;
+     background-size: cover;
+}
+.center li:nth-child(9){
+    background: url("../images/彦6.jpg")no-repeat;
+    background-position: center center;
+     background-size: cover;
+}
+
+@keyframes moving{
+    0%{
+        transform: translateX(0%);
+    }
+    50%{
+        transform: translateX(-50%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+.center ul:hover{
+    animation-play-state: paused;
+
+}
+.big_1,
+.big_2{
+    position: absolute;
+    top: 350px;
+    left: 500px;
+    width: 600px;
+    height: 400px;
+    border: 2px solid red;
+    background-color: skyblue;
+    color: green;
+}
+/* 切换时候的特效 */
+.mask1{
+    -webkit-mask-image:url("../images/nature-sprite.png");
+    -webkit-mask-size:2300% 100%;
+    animation: danchu 2s steps(22);
+}
+.mask2{
+    -webkit-mask-image:url("../images/nature-sprite-2.png");
+    -webkit-mask-size:7100% 100%;
+    animation: danchu 2s steps(70);
+}
+.mask3{
+    -webkit-mask-image:url("../images/urban-sprite-2.png");
+    -webkit-mask-size:7400% 100%;
+    animation: danchu 2s steps(73);
+}
+.mask4{
+    -webkit-mask-image:url("../images/urban-sprite.png");
+    -webkit-mask-size:3000% 100%;
+    animation: danchu 2s steps(29);
+}
+.mask5{
+    -webkit-mask-image:url("../images/building-sprite-2.png");
+    -webkit-mask-size:8400% 100%;
+    animation: danchu 2s steps(83);
+}
+.mask6{
+    -webkit-mask-image:url("../images/building-sprite.png");
+    -webkit-mask-size:7500% 100%;
+    animation: danchu 2s steps(74);
+}
+@keyframes danchu{
+        0% {-webkit-mask-position:0% 0px;}
+        100% {-webkit-mask-position:100% 0px;}
+}
+
+
+/* 特效按钮样式 */
+.texiao{
+    margin-top: 250px;
+    margin-left: 400px;
+    width: 50px;
+    height: 240px;
+    background-color: pink;
+}
+.texiao li{
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+}
+.texiao button{
+    width: 40px;
+    height: 30px;
+    background-color: black;
+    color: white;
+}
+.texiao li:nth-child(1){
+    -webkit-mask-image:url("../images/nature-sprite.png");
+    -webkit-mask-size:2300% 100%;
+
+}
+.texiao li:nth-child(2){
+    -webkit-mask-image:url("../images/nature-sprite-2.png");
+    -webkit-mask-size:7100% 100%;
+
+}
+.texiao li:nth-child(3){
+    -webkit-mask-image:url("../images/urban-sprite-2.png");
+    -webkit-mask-size:7400% 100%;
+
+}
+.texiao li:nth-child(4){
+    -webkit-mask-image:url("../images/urban-sprite.png");
+    -webkit-mask-size:3000% 100%;
+
+}
+.texiao li:nth-child(5){
+    -webkit-mask-image:url("../images/building-sprite-2.png");
+    -webkit-mask-size:8400% 100%;
+
+}
+.texiao li:nth-child(6){
+    -webkit-mask-image:url("../images/building-sprite.png");
+    -webkit-mask-size:7500% 100%;
+
+}
+.texiao li:nth-child(1):hover{
+    animation: danchu 2s steps(22);
+}
+.texiao li:nth-child(2):hover{
+    animation: danchu 2s steps(70);
+}
+.texiao li:nth-child(3):hover{
+    animation: danchu 2s steps(73);
+}
+.texiao li:nth-child(4):hover{
+    animation: danchu 2s steps(29);
+}
+.texiao li:nth-child(5):hover{
+    animation: danchu 2s steps(83);
+}
+.texiao li:nth-child(6):hover{
+    animation: danchu 2s steps(74);
+}
+.border1{
+    border: 3px solid black;
+}
+
