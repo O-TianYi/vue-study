@@ -1,0 +1,55 @@
+在jwt.cs中的判断请求头是否存在token的时候，如果没有携带就会报
+“System.InvalidOperationException”类型的异常在 System.Net.Http.dll 中发生，但未在用户代码中进行处理
+
+报错的源头：!headers.GetValues(name:"token").Any()
+
+
+
+
+
+解码的时候的异常会报错：
+catch (TokenExpiredException)
+            {
+                Console.WriteLine("token已经过期");
+                //return  TokenResponse(){ Code=2,Message="token已经过期"} ;
+                throw;
+            }
+            catch
+            {
+                Console.WriteLine("token已被改动");
+                throw;
+            }
+
+
+
+
+
+
+
+C#遇到的问题：
+两次访问数据库的时候，前一次访问关闭了数据库，导致第二次访问错误，要在DBTools调用重新启动数据库，才返回cmd；
+
+
+
+
+
+
+前端的问题：
+如何把cookie存储返回的token
+
+
+代理端口无法存在携带原端口的cookie
+原因:因为cookie遵循的是同源策略，所以在跨域情况下cookie无法被传输和创建，这就比较坑了，因为在登录接口需要cookie+session来判断用户登录超时等逻辑所以此处需要解决
+react脚手架的反向代理的功能，，，
+
+
+
+
+
+遇到的问题：
+c后端如何获取前端请求头的cookie的token属性，
+ CookieHeaderValue cookie = ControllerContext.Request.Headers.GetCookies("token").FirstOrDefault();
+            //var cookie = ControllerContext.Request.Headers.GetCookies().FirstOrDefault();
+            return cookie.ToString().Split('=')[1];
+
+
